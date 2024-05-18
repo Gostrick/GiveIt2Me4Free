@@ -18,13 +18,21 @@
                 <li><a href="Logged_off_Home.html">Home</a></li>
                 <li><a href="#">Search</a></li>
                 <li><a href="#"><img src="assets/Settings.png" height="20px"></a></li>
-                <li class="support-us"><a href="#">Support us!</a></li>
+                <li class="support-us"><a href="Logged_off_Support_us.html">Support us!</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><img src="assets/English_flag.webp"height="20px"></a>
+                    <div class="dropdown-content">
+                        <a href="#"><img src="assets/English_flag.webp" height="20px"> English</a>
+                        <a href="#"><img src="assets/French_flag.webp" height="20px"> French</a>
+                        <!-- Add more languages here -->
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
         <section class="offer">
-            <a href="#" class="report-icon" ><img src="assets/Report.png" height="20px"></a>
+            <a href="#" class="report-icon" onclick="openModal(event)"><img src="assets/Report.png" height="20px"></a>
             <p>Offer from: @usertest1</p>
             <h2>Child Puzzle game</h2>
             <img src="assets/Offer1.webp" height="300px">
@@ -32,13 +40,34 @@
             <button>Send Message</button>
         </section>
         <section class="offer">
-            <a href="#" class="report-icon" ><img src="assets/Report.png" height="20px"></a>
+            <a href="#" class="report-icon" onclick="openModal(event)"><img src="assets/Report.png" height="20px"></a>
             <p>Offer from: @usertest2</p>
             <h2>UNLOCK! Timeless Adventures</h2>
             <img src="assets/Offer2.webp" height="300px">
             <p>Desc.: Really good condition, used once. Looking to trade this one for another Adventure</p>
             <button>Send Message</button>
         </section>
+
+        <div id="reportModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Report</h2>
+                <form>
+                    <label>
+                        <input type="checkbox" name="report" value="offensive_name"> Offensive name
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="report" value="mentioning_money"> Mentioning money
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="report" value="offensive_offer"> Offensive Offer
+                    </label><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    
+        <script src="script.js"></script>
     </main>
 </body>
 </html>
