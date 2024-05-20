@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM - GiveIt2Me4Free</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>GiveIt2Me4Free</h1>
+        <ul class="sign-up">
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Logged_off_Home.html">Log Off</a></li>
+        </ul>
+        <nav>
+            <ul>
+                <li><a href="Logged_in_Home.html">Home</a></li>
+                <li><a href="Bookmarks.html">Bookmarks</a></li>
+                <li><a href="Your_Offers.html">Your Offers</a></li>
+                <li>
+                    <a href="#">
+                        <img src="assets/Notifs.png" height="20px">
+                        <span id="notif-counter" class="notif-counter">3</span>
+                    </a>
+                </li>
+                <li><a href="#"><img src="assets/Settings.png" height="20px"></a></li>
+                <li class="support-us"><a href="Logged_in_Support_us.html">Support us!</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="search-bar" class="search-bar">
+        <form id="search-form" class="search-form">
+            <input type="text" id="search-input" placeholder="Search for offers...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <main>
+        <section class="dm-chat">
+            <h2>Chat with <span id="chat-with">@user</span></h2>
+            <div class="chat-box">
+                <div class="message received">
+                    <p>Hello! I have a question about your offer.</p>
+                    <span class="timestamp">30 minutes ago</span>
+                </div>
+                <div class="message sent">
+                    <p>Of course! What is your question?</p>
+                    <span class="timestamp">21 minutes ago</span>
+                </div>
+                <div class="message received">
+                    <p>My question is about the condition of the item.</p>
+                    <span class="timestamp">17 minutes ago</span>
+                </div>
+                <!-- Add more messages here -->
+            </div>
+            <form class="chat-form">
+                <input type="text" placeholder="Type a message..." id="chat-input">
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const user = urlParams.get('user');
+                document.getElementById('chat-with').textContent = user;
+
+                document.querySelector('.chat-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const chatInput = document.getElementById('chat-input');
+                    const messageText = chatInput.value.trim();
+                    if (messageText) {
+                        const message = document.createElement('div');
+                        message.classList.add('message', 'sent');
+                        message.innerHTML = `<p>${messageText}</p><span class="timestamp">Just now</span>`;
+                        document.querySelector('.chat-box').appendChild(message);
+                        chatInput.value = '';
+                    }
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>

@@ -43,6 +43,29 @@ document.addEventListener('DOMContentLoaded', function() {
             editProfileModal.style.display = 'none';
         }
     }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const user = urlParams.get('user');
+    const chatWithElement = document.getElementById('chat-with');
+    if (chatWithElement && user) {
+        chatWithElement.textContent = user;
+    }
+
+    const chatForm = document.querySelector('.chat-form');
+    if (chatForm) {
+        chatForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const chatInput = document.getElementById('chat-input');
+            const messageText = chatInput.value.trim();
+            if (messageText) {
+                const message = document.createElement('div');
+                message.classList.add('message', 'sent');
+                message.innerHTML = `<p>${messageText}</p><span class="timestamp">Just now</span>`;
+                document.querySelector('.chat-box').appendChild(message);
+                chatInput.value = '';
+            }
+        });
+    }
 });
 
 document.getElementById('search-form').addEventListener('submit', function(event) {
@@ -83,3 +106,5 @@ function updateNotificationCounter(count) {
         console.error("Notification counter element not found");
     }
 }
+
+updateNotificationCounter(3);
