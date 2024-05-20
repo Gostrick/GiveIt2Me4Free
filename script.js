@@ -34,3 +34,13 @@ document.getElementById('editProfileForm').addEventListener('submit', function(e
     // Here you can add the code to handle the form submission and update the profile info
     closeEditProfileModal();
 });
+
+function updateNotificationCounter(count) {
+    var notifCounter = document.getElementById('notif-counter');
+    if (count > 0) {
+        notifCounter.textContent = count;
+        notifCounter.classList.add('show');
+    } else {
+        notifCounter.classList.remove('show');
+    }
+}
