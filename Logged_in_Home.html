@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li><a href="Logged_in_Home.html">Home</a></li>
-                <li><a href="#">Search</a></li>
+
                 <li><a href="Bookmarks.html">Bookmarks</a></li>
                 <li><a href="Your_Offers.html">Your Offers</a></li>
                 <li>
@@ -30,6 +30,12 @@
             </ul>
         </nav>
     </header>
+    <div id="search-bar" class="search-bar hidden">
+        <form id="search-form" class="search-form">
+            <input type="text" id="search-input" placeholder="Search for offers...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <main>
         <section class="offer">
             <a href="#" class="report-icon" onclick="openModal(event)"><img src="assets/Report.png" height="20px"></a>

@@ -16,23 +16,28 @@
         <nav>
             <ul>
                 <li><a href="Logged_in_Home.html">Home</a></li>
-                <li><a href="#">Search</a></li>
                 <li><a href="Bookmarks.html">Bookmarks</a></li>
                 <li><a href="Your_Offers.html">Your Offers</a></li>
-                <li><a href="#"><img src="assets/Notifs.png" height="20px"></a></li>
+                <li><a href="#"><img src="assets/Notifs.png" height="20px"><span id="notif-counter" class="notif-counter">3</span></a></li>
                 <li><a href="#"><img src="assets/Settings.png" height="20px"></a></li>
                 <li class="support-us"><a href="Logged_in_Support_us.html">Support us!</a></li>
             </ul>
         </nav>
     </header>
+    <div id="search-bar" class="search-bar">
+        <form id="search-form" class="search-form">
+            <input type="text" id="search-input" placeholder="Search for offers...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <main>
         <section class="profile">
             <h1>Your Profile</h1>
             <div class="profile-info">
                 <img src="assets/profile_picture.jpg" alt="Profile Picture" class="profile-pic">
                 <div class="profile-details">
-                    <p><strong>Nickname:</strong> <span id="nickname">@user123</span></p>
-                    <p><strong>Email:</strong> <span id="email">user@example.com</span></p>
+                    <p><strong>Nickname:</strong> <span id="nickname">@papicheskiy123</span></p>
+                    <p><strong>Email:</strong> <span id="email">arthas@example.com</span></p>
                     <p><strong>Member since:</strong> <span id="member-since">January 2023</span></p>
                     <button id="edit-profile-button">Edit Profile</button>
                 </div>
@@ -45,15 +50,16 @@
                 <h2>Edit Profile</h2>
                 <form id="editProfileForm">
                     <label for="nickname">Nickname:</label>
-                    <input type="text" id="edit-nickname" name="nickname" value="@user123"><br>
+                    <input type="text" id="edit-nickname" name="nickname" value="@papicheskiy123"><br>
                     <label for="email">Email:</label>
-                    <input type="email" id="edit-email" name="email" value="user@example.com"><br>
+                    <input type="email" id="edit-email" name="email" value="arthas@example.com"><br>
                     <button type="submit">Save Changes</button>
                 </form>
             </div>
         </div>
-    
+
         <script src="script.js"></script>
     </main>
 </body>
 </html>
+

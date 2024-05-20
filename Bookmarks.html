@@ -3,28 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GiveIt2Me4Free</title>
+    <title>Bookmarks - GiveIt2Me4Free</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>GiveIt2Me4Free</h1>
         <ul class="sign-up">
-            <li><a href="#">Profile</a></li>
+            <li><a href="Profile.html">Profile</a></li>
             <li><a href="Logged_off_Home.html">Log Off</a></li>
         </ul>
         <nav>
             <ul>
                 <li><a href="Logged_in_Home.html">Home</a></li>
-                <li><a href="#">Search</a></li>
                 <li><a href="Bookmarks.html">Bookmarks</a></li>
                 <li><a href="Your_Offers.html">Your Offers</a></li>
-                <li><a href="#"><img src="assets/Notifs.png" height="20px"></a></li>
+                <li>
+                    <a href="#">
+                        <img src="assets/Notifs.png" height="20px">
+                        <span id="notif-counter" class="notif-counter">3</span>
+                    </a>
+                </li>
                 <li><a href="#"><img src="assets/Settings.png" height="20px"></a></li>
                 <li class="support-us"><a href="Logged_in_Support_us.html">Support us!</a></li>
             </ul>
         </nav>
     </header>
+    <div id="search-bar" class="search-bar">
+        <form id="search-form" class="search-form">
+            <input type="text" id="search-input" placeholder="Search for offers...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <main>
         <h1>Your bookmarked offers:</h1>
         <section class="offer">
@@ -55,7 +65,6 @@
                 </form>
             </div>
         </div>
-    
         <script src="script.js"></script>
     </main>
 </body>
