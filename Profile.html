@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - GiveIt2Me4Free</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>GiveIt2Me4Free</h1>
+        <ul class="sign-up">
+            <li><a href="#">Profile</a></li>
+            <li><a href="Logged_off_Home.html">Log Off</a></li>
+        </ul>
+        <nav>
+            <ul>
+                <li><a href="Logged_in_Home.html">Home</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="Bookmarks.html">Bookmarks</a></li>
+                <li><a href="Your_Offers.html">Your Offers</a></li>
+                <li><a href="#"><img src="assets/Notifs.png" height="20px"></a></li>
+                <li><a href="#"><img src="assets/Settings.png" height="20px"></a></li>
+                <li class="support-us"><a href="Logged_in_Support_us.html">Support us!</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="profile">
+            <h1>Your Profile</h1>
+            <div class="profile-info">
+                <img src="assets/profile_picture.png" alt="Profile Picture" class="profile-pic">
+                <div class="profile-details">
+                    <p><strong>Nickname:</strong> <span id="nickname">@user123</span></p>
+                    <p><strong>Email:</strong> <span id="email">user@example.com</span></p>
+                    <p><strong>Member since:</strong> <span id="member-since">January 2023</span></p>
+                    <button id="edit-profile-button">Edit Profile</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="editProfileModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeEditProfileModal()">&times;</span>
+                <h2>Edit Profile</h2>
+                <form id="editProfileForm">
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" id="edit-nickname" name="nickname" value="@user123"><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="edit-email" name="email" value="user@example.com"><br>
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
