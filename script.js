@@ -1,6 +1,7 @@
 console.log("JavaScript file is loaded");
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Edit Profile Functionality
     const editProfileButton = document.getElementById('edit-profile-button');
     const editProfileModal = document.getElementById('editProfileModal');
     const editProfileForm = document.getElementById('editProfileForm');
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Chat Functionality
     const urlParams = new URLSearchParams(window.location.search);
     const user = urlParams.get('user');
     const chatWithElement = document.getElementById('chat-with');
@@ -66,45 +68,86 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
 
-document.getElementById('search-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const searchTerm = document.getElementById('search-input').value.toLowerCase();
-    const offers = document.querySelectorAll('.offer');
+    // Search Functionality
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchTerm = document.getElementById('search-input').value.toLowerCase();
+        const offers = document.querySelectorAll('.offer');
 
-    offers.forEach(function(offer) {
-        const title = offer.querySelector('h2').textContent.toLowerCase();
-        const description = offer.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
-        if (title.includes(searchTerm) || description.includes(searchTerm)) {
-            offer.style.display = 'block';
+        offers.forEach(function(offer) {
+            const title = offer.querySelector('h2').textContent.toLowerCase();
+            const description = offer.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                offer.style.display = 'block';
+            } else {
+                offer.style.display = 'none';
+            }
+        });
+    });
+
+    // Report Modal Functionality
+    window.openModal = function(event) {
+        event.preventDefault();
+        document.getElementById('reportModal').style.display = 'block';
+    }
+
+    window.closeModal = function() {
+        document.getElementById('reportModal').style.display = 'none';
+    }
+
+    // Notification Counter Functionality
+    function updateNotificationCounter(count) {
+        var notifCounter = document.getElementById('notif-counter');
+        if (notifCounter) {
+            if (count > 0) {
+                notifCounter.textContent = count;
+                notifCounter.classList.add('show');
+            } else {
+                notifCounter.classList.remove('show');
+            }
         } else {
-            offer.style.display = 'none';
+            console.error("Notification counter element not found");
         }
+    }
+
+    // Function is called just to show that notification could be changed dynamically
+    updateNotificationCounter(3);
+
+    // Upload Item Modal Functionality
+    const uploadItemButton = document.getElementById('upload-item-button');
+    const uploadItemModal = document.getElementById('uploadItemModal');
+    const closeUploadBtn = document.querySelector('.close');
+
+    if (uploadItemButton) {
+        console.log("Upload item button found");
+        uploadItemButton.addEventListener('click', function() {
+            console.log("Upload item button clicked");
+            uploadItemModal.style.display = 'block';
+        });
+    } else {
+        console.error("Upload item button not found");
+    }
+
+    if (closeUploadBtn) {
+        console.log("Close button for upload modal found");
+        closeUploadBtn.addEventListener('click', function() {
+            uploadItemModal.style.display = 'none';
+        });
+    } else {
+        console.error("Close button for upload modal not found");
+    }
+
+    window.onclick = function(event) {
+        if (event.target == uploadItemModal) {
+            uploadItemModal.style.display = 'none';
+        }
+    }
+
+    document.getElementById('uploadItemForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Here should be added functionaliy for uploading item when the webserver and backend part will be implemented
+        alert('Item uploaded successfully!');
+        uploadItemModal.style.display = 'none';
     });
 });
-
-function openModal(event) {
-    event.preventDefault();
-    document.getElementById('reportModal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('reportModal').style.display = 'none';
-}
-
-function updateNotificationCounter(count) {
-    var notifCounter = document.getElementById('notif-counter');
-    if (notifCounter) {
-        if (count > 0) {
-            notifCounter.textContent = count;
-            notifCounter.classList.add('show');
-        } else {
-            notifCounter.classList.remove('show');
-        }
-    } else {
-        console.error("Notification counter element not found");
-    }
-}
-
-updateNotificationCounter(3);

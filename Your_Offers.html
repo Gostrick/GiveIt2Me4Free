@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GiveIt2Me4Free</title>
+    <title>Your Offers - GiveIt2Me4Free</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -46,6 +46,7 @@
     </div>
     <main>
         <h1>Your offers:</h1>
+        <button id="upload-item-button">Upload Item</button>
         <section class="offer">
             <a href="#" class="report-icon" onclick="openModal(event)"><img src="assets/Report.png" height="20px"></a>
             <p>Offer from: @yipee</p>
@@ -63,21 +64,18 @@
             <button>Delete offer</button>
         </section>
 
-        <div id="reportModal" class="modal">
+        <div id="uploadItemModal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Report</h2>
-                <form>
-                    <label>
-                        <input type="checkbox" name="report" value="offensive_name"> Offensive name
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name="report" value="mentioning_money"> Mentioning money
-                    </label><br>
-                    <label>
-                        <input type="checkbox" name="report" value="offensive_offer"> Offensive Offer
-                    </label><br>
-                    <button type="submit">Submit</button>
+                <span class="close" onclick="closeUploadModal()">&times;</span>
+                <h2>Upload Item</h2>
+                <form id="uploadItemForm">
+                    <label for="item-name">Item Name:</label>
+                    <input type="text" id="item-name" name="item-name" required><br>
+                    <label for="item-description">Description:</label>
+                    <textarea id="item-description" name="item-description" required></textarea><br>
+                    <label for="item-image">Upload Image:</label>
+                    <input type="file" id="item-image" name="item-image" accept="image/*" required><br>
+                    <button type="submit">Upload</button>
                 </form>
             </div>
         </div>
