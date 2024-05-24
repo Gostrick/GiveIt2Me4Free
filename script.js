@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('uploadItemForm').addEventListener('submit', function(event) {
         event.preventDefault();
-        // Here should be added functionaliy for uploading item when the webserver and backend part will be implemented
+        // Here should be added functionality for uploading item when the webserver and backend part will be implemented
         alert('Item uploaded successfully!');
         uploadItemModal.style.display = 'none';
     });
