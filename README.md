@@ -6,8 +6,6 @@ Our project is a website allowing people to look for free item offers.
 
 - [Features](#features)
 - [Installation and execution](#installation-and-execution)
-- [Usage](#usage)
-
 
 ## Features
 
