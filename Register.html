@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - GiveIt2Me4Free</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>GiveIt2Me4Free</h1>
+        <nav>
+            <ul>
+                <li><a href="Logged_off_Home.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="Logged_in_Home.html">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-section">
+            <h1>Create an Account</h1>
+            <form id="registration-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <div id="verification-section" class="hidden">
+                <h2>Verify Your Account</h2>
+                <p>We have sent verification codes to your email and phone. Please enter them below:</p>
+                <label for="email-code">Email Verification Code:</label>
+                <input type="text" id="email-code" name="email-code" required><br>
+                <label for="phone-code">Phone Verification Code:</label>
+                <input type="text" id="phone-code" name="phone-code" required><br>
+                <button id="verify-button" class="btn">Verify</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+

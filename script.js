@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const editProfileButton = document.getElementById('edit-profile-button');
     const editProfileModal = document.getElementById('editProfileModal');
     const editProfileForm = document.getElementById('editProfileForm');
-    const closeBtn = document.querySelector('.close');
+    const closeBtns = document.querySelectorAll('.close');
 
     if (editProfileButton) {
         console.log("Edit profile button found");
@@ -18,14 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("Edit profile button not found");
     }
 
-    if (closeBtn) {
-        console.log("Close button found");
-        closeBtn.addEventListener('click', function() {
-            editProfileModal.style.display = 'none';
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modal = btn.closest('.modal');
+            modal.style.display = 'none';
         });
-    } else {
-        console.error("Close button not found");
-    }
+    });
 
     if (editProfileForm) {
         console.log("Edit profile form found");
@@ -40,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.onclick = function(event) {
-        if (event.target == editProfileModal) {
-            editProfileModal.style.display = 'none';
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
         }
     }
 
@@ -117,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Upload Item Modal Functionality
     const uploadItemButton = document.getElementById('upload-item-button');
     const uploadItemModal = document.getElementById('uploadItemModal');
-    const closeUploadBtn = document.querySelector('.close');
 
     if (uploadItemButton) {
         console.log("Upload item button found");
@@ -129,25 +126,61 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("Upload item button not found");
     }
 
-    if (closeUploadBtn) {
-        console.log("Close button for upload modal found");
-        closeUploadBtn.addEventListener('click', function() {
-            uploadItemModal.style.display = 'none';
-        });
-    } else {
-        console.error("Close button for upload modal not found");
-    }
-
-    window.onclick = function(event) {
-        if (event.target == uploadItemModal) {
-            uploadItemModal.style.display = 'none';
-        }
-    }
-
     document.getElementById('uploadItemForm').addEventListener('submit', function(event) {
         event.preventDefault();
         // Here should be added functionality for uploading item when the webserver and backend part will be implemented
         alert('Item uploaded successfully!');
         uploadItemModal.style.display = 'none';
     });
+
+    // Feedback Modal Functionality
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Handle feedback submission logic
+        alert('Feedback submitted successfully!');
+        document.getElementById('feedbackModal').style.display = 'none';
+    });
+
+    // Registration Form Functionality
+    const registrationForm = document.getElementById('registration-form');
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Handle registration logic
+            console.log("Registration form submitted");
+            // Simulate sending verification codes
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('verification-section').style.display = 'block';
+        });
+    }
+
+    const verifyButton = document.getElementById('verify-button');
+    if (verifyButton) {
+        verifyButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            // Handle verification logic
+            const emailCode = document.getElementById('email-code').value;
+            const phoneCode = document.getElementById('phone-code').value;
+            if (emailCode === '1234' && phoneCode === '5678') { // Replace with actual verification logic
+                alert('Verification successful!');
+                window.location.href = 'Logged_in_Home.html';
+            } else {
+                alert('Invalid verification codes');
+            }
+        });
+    }
 });
+
+// Define functions globally to ensure they are accessible
+function openFeedbackModal(event) {
+    event.preventDefault();
+    document.getElementById('feedbackModal').style.display = 'block';
+}
+
+function closeFeedbackModal() {
+    document.getElementById('feedbackModal').style.display = 'none';
+}
+
+// Ensure these functions are attached to the window object
+window.openFeedbackModal = openFeedbackModal;
+window.closeFeedbackModal = closeFeedbackModal;

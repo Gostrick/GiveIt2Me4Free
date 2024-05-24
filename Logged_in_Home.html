@@ -28,7 +28,7 @@
                 <li><a href="#"><img src="assets/Settings.png" height="20px"></a></li>
                 <li class="support-us"><a href="Logged_in_Support_us.html">Support us!</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropbtn"><img src="assets/English_flag.webp"height="20px"></a>
+                    <a href="#" class="dropbtn"><img src="assets/English_flag.webp" height="20px"></a>
                     <div class="dropdown-content">
                         <a href="#"><img src="assets/English_flag.webp" height="20px"> English</a>
                         <a href="#"><img src="assets/French_flag.webp" height="20px"> French</a>
@@ -53,6 +53,7 @@
             <p>Desc.: Complete set, used a lot but still working fine.</p>
             <button onclick="location.href='DM_Page.html?user=videogamesl0ver'">Send Message</button>
             <button>Bookmark</button>
+            <button onclick="openFeedbackModal(event)">Leave Feedback</button>
         </section>
         <section class="offer">
             <a href="#" class="report-icon" onclick="openModal(event)"><img src="assets/Report.png" height="20px"></a>
@@ -62,6 +63,7 @@
             <p>Desc.: Cartridge in good condition, looking for another 3ds game trade.</p>
             <button onclick="location.href='DM_Page.html?user=johndoe2'">Send Message</button>
             <button>Bookmark</button>
+            <button onclick="openFeedbackModal(event)">Leave Feedback</button>
         </section>
 
         <div id="reportModal" class="modal">
@@ -82,7 +84,21 @@
                 </form>
             </div>
         </div>
-    
+
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFeedbackModal()">&times;</span>
+                <h2>Leave Feedback</h2>
+                <form id="feedbackForm">
+                    <label for="rating">Rating (out of 5 stars):</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" required></textarea><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
         <script src="script.js"></script>
     </main>
 </body>

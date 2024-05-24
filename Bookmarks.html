@@ -54,6 +54,7 @@
             <p>Desc.: Good condition, but one bumper doesn't work properly.</p>
             <button onclick="location.href='DM_Page.html?user=gamer1'">Send Message</button>
             <button>Remove from Bookmark</button>
+            <button onclick="openFeedbackModal(event)">Leave Feedback</button>
         </section>
 
         <div id="reportModal" class="modal">
@@ -74,8 +75,22 @@
                 </form>
             </div>
         </div>
+
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFeedbackModal()">&times;</span>
+                <h2>Leave Feedback</h2>
+                <form id="feedbackForm">
+                    <label for="rating">Rating (out of 5 stars):</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" required></textarea><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
         <script src="script.js"></script>
     </main>
 </body>
 </html>
-

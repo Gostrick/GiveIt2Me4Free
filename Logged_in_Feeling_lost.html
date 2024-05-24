@@ -50,6 +50,52 @@
         <img src="assets/Feeling_lost_step_1.png" height="600px">
         <p>Once logged in, here are all the buttons with their uses on the image below:</p>
         <img src="assets/Feeling_lost_step_2.png" height="600px">
+
+        <!-- Example offers to demonstrate feedback functionality -->
+        <section class="offer">
+            <a href="#" class="report-icon" onclick="openModal(event)"><img src="assets/Report.png" height="20px"></a>
+            <p>Offer from: @exampleuser</p>
+            <h2>Example Item</h2>
+            <img src="assets/example_item.webp" height="300px">
+            <p>Desc.: Example description of the item.</p>
+            <button onclick="location.href='DM_Page.html?user=exampleuser'">Send Message</button>
+            <button>Bookmark</button>
+            <button onclick="openFeedbackModal(event)">Leave Feedback</button>
+        </section>
+
+        <div id="reportModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Report</h2>
+                <form>
+                    <label>
+                        <input type="checkbox" name="report" value="offensive_name"> Offensive name
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="report" value="mentioning_money"> Mentioning money
+                    </label><br>
+                    <label>
+                        <input type="checkbox" name="report" value="offensive_offer"> Offensive Offer
+                    </label><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFeedbackModal()">&times;</span>
+                <h2>Leave Feedback</h2>
+                <form id="feedbackForm">
+                    <label for="rating">Rating (out of 5 stars):</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" required></textarea><br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
     </main>
     <script src="script.js"></script>
 </body>
