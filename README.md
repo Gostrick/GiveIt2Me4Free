@@ -4,28 +4,16 @@ Our project is a website allowing people to look for free item offers.
 
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Features](#features)
-- [Installation](#installation)
+- [Installation and execution](#installation-and-execution)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
-## Introduction
-
-Introduce your project here. What does it do? Why did you create it? What problem does it solve?
 
 ## Features
 
-List the key features of your project here.
+The features we implemented are the Functional requirement we discussed in D1. Our goal was to make a prototype showing how the website would feel. Because we do not have database nor servers, we couldn't implement every feature, but we tried to implement them in a static way to make it visually understandable. Please note that some features like buttons to bookmark for instance are not working and just their for visual purpose because we don't have any database to store these datas.
 
-- Feature 1
-- Feature 2
-- Feature 3
-  - Sub-feature 1
-  - Sub-feature 2
+## Installation and execution
 
-## Installation
-
-Provide instructions on how to install and set up your project. Include any prerequisites and step-by-step installation guides.
+You can simply run the website by opening logged_off_home.html which is the "Main page" that would appear when you search for our website for the first time. From there, feel free to click on every link, try different features and look how you can browse the website. The goal is not to give you precise directions but to let you click everywhere and see how everything would feel.
 
